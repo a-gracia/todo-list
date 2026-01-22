@@ -1,7 +1,8 @@
 import "./styles.css";
-import odinImage from "./odin.png";
+import { ToDoEngine } from "./engine";
+import { DOMController } from "./dom-controller";
 
-const image = document.createElement("img");
-image.src = odinImage;
+let app = new ToDoEngine();
 
-document.body.appendChild(image);
+let controller = new DOMController(app);
+controller.start();

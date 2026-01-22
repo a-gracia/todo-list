@@ -5,5 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav>
+        <button id="my-list-button">My List</button>
+        <button id="my-projects-button">Projects</button>
+      </nav>
+      <h1>My list</h1>
+      <div id="todo-container"></div>
+      <div id="my-projects-container hidden"></div>
+    </header>
+  </body>
 </html>
+
+<template id="todo-card">
+  <div class="todo-card">
+    <p>Title: <span id="title"></span></p>
+    <p>Description: <span id="description"></span></p>
+    <p>Due date: <span id="dueDate"></span></p>
+    <p>Priority: <span id="priority"></span></p>
+    <p>Notes: <span id="notes"></span></p>
+  </div>
+</template>

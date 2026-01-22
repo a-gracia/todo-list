@@ -1,3 +1,7 @@
-* {
-  background-color: aquamarine;
+.hidden {
+  display: none;
+}
+
+.todo-card {
+  border: black 2px solid;
 }
