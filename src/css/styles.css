@@ -1,0 +1,27 @@
+main {
+  min-width: 600px;
+  justify-self: center;
+}
+.todo-card {
+  display: flex;
+  flex-direction: column;
+  border: black 2px solid;
+  padding: 8px;
+}
+
+.todo-main {
+  display: flex;
+  gap: 8px;
+}
+.todo-main input {
+  flex-grow: 1;
+}
+
+.todo-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}

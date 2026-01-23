@@ -1,6 +1,6 @@
-import "./styles.css";
-import { ToDoEngine } from "./engine";
-import { DOMController } from "./dom-controller";
+import "./css/styles.css";
+import { ToDoEngine } from "./js/engine";
+import { DOMController } from "./js/dom-controller";
 
 let app = new ToDoEngine();
 
