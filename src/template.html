@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Oh My ToDo! - Free Online ToDo list</title>
   </head>
   <body>
     <header>
-      <nav>
-        <button id="my-list-button">My List</button>
-        <button id="my-projects-button">Projects</button>
+      <nav class="navbar">
+        <button class="button is-text" id="my-list-button">My List</button>
+        <button class="button is-text" id="my-projects-button">Projects</button>
       </nav>
     </header>
     <main>
       <div id="todo-container">
-        <h1 id="todo-title">My list</h1>
+        <h1 class="title" id="todo-title">My list</h1>
+
         <button id="add-todo-button">Add ToDo</button>
         <div id="list"></div>
       </div>
@@ -51,7 +52,6 @@
 <template id="project-card">
   <div class="project-card">
     <input type="text" name="name" id="name" />
-
     <p>Todo count: <span id="count">3</span></p>
     <button id="open-button">Open project</button>
     <button id="delete-button">Delete project</button>

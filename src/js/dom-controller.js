@@ -29,6 +29,7 @@ export class DOMController {
       e.preventDefault();
       this.currentProject.addToDo("New ToDo");
       this.loadProject();
+      this.saveData();
     });
 
     let myProjectsButton = document.querySelector("#my-projects-button");
@@ -43,6 +44,7 @@ export class DOMController {
       e.preventDefault();
       this.app.addProject("New Project");
       this.loadProjectList();
+      this.saveData();
     });
   }
 
@@ -70,26 +72,31 @@ export class DOMController {
       title.value = element.title;
       title.addEventListener("change", (e) => {
         element.title = e.target.value;
+        this.saveData();
       });
 
       dueDate.value = element.dueDate;
       dueDate.addEventListener("change", (e) => {
         element.dueDate = e.target.value;
+        this.saveData();
       });
 
       description.value = element.description;
       description.addEventListener("change", (e) => {
         element.description = e.target.value;
+        this.saveData();
       });
 
       priority.value = element.priority;
       priority.addEventListener("change", (e) => {
         element.priority = e.target.value;
+        this.saveData();
       });
 
       notes.value = element.notes;
       notes.addEventListener("change", (e) => {
         element.notes = e.target.value;
+        this.saveData();
       });
 
       expandButton.addEventListener("click", (e) => {
@@ -103,6 +110,7 @@ export class DOMController {
         let id = e.target.getAttribute("data-id");
         this.currentProject.removeToDo(id);
         this.loadProject();
+        this.saveData();
       });
 
       this.todoListContainer.appendChild(clone);
@@ -129,7 +137,6 @@ export class DOMController {
         let id = e.target.getAttribute("data-id");
 
         this.currentProject = this.app.getProjectById(id);
-
         this.todoListContainer.replaceChildren();
         this.showToDoContainer();
         this.loadProject();
@@ -142,6 +149,7 @@ export class DOMController {
         let id = e.target.getAttribute("data-id");
         this.app.removeProjectById(id);
         this.loadProjectList();
+        this.saveData();
       });
 
       this.projectListContainer.appendChild(clone);
@@ -156,5 +164,9 @@ export class DOMController {
   showProjectsContainer() {
     this.todoContainer.classList.add("hidden");
     this.myProjectsContainer.classList.remove("hidden");
+  }
+
+  saveData() {
+    localStorage.setItem("app_data", JSON.stringify(this.app));
   }
 }

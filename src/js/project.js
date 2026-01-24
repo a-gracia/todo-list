@@ -8,8 +8,20 @@ export class Project {
     this.id = uuidv4();
   }
 
-  addToDo(title) {
-    let todo = new ToDo((title = title));
+  addToDo(
+    title = "",
+    description = null,
+    dueDate = null,
+    priority = null,
+    notes = null,
+  ) {
+    let todo = new ToDo(
+      (title = title),
+      (description = description),
+      (dueDate = dueDate),
+      (priority = priority),
+      (notes = notes),
+    );
     this.todoList.unshift(todo);
   }
 
