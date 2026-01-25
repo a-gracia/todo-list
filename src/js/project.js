@@ -15,13 +15,7 @@ export class Project {
     priority = null,
     notes = null,
   ) {
-    let todo = new ToDo(
-      (title = title),
-      (description = description),
-      (dueDate = dueDate),
-      (priority = priority),
-      (notes = notes),
-    );
+    let todo = new ToDo(title, description, dueDate, priority, notes);
     this.todoList.unshift(todo);
   }
 
